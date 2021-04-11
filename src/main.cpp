@@ -15,6 +15,12 @@ int main(int argc, char **argv)
 
     GLFWwindow *window = glfwCreateWindow(640, 360, "Starter Project", NULL, NULL);
 
+    if (window == NULL)
+    {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
     glfwMakeContextCurrent(window);
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
