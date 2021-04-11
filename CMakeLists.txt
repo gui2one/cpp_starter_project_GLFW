@@ -14,9 +14,15 @@ add_executable( ${project_name} #SHARED
     ${sources}
 )
 
-find_package(Vulkan)
 
-if(Vulkan_FOUND)
-    target_include_directories(${project_name} PRIVATE Vulkan::Vulkan)
-    target_link_libraries(${project_name} Vulkan::Vulkan)
-endif()
+# GLFW
+add_subdirectory(src/vendor/glfw)
+
+include_directories(src/vendor/glfw/include)
+target_link_libraries(${project_name} glfw ${GLFW_LIBRARIES})
+
+# GLAD
+add_subdirectory(src/vendor/glad)
+
+include_directories(src/vendor/glad/include)
+target_link_libraries(${project_name} glad ${GLAD_LIBRARIES})
