@@ -4,6 +4,9 @@
 
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtx/string_cast.hpp>
+
 int main(int argc, char **argv)
 {
 
@@ -38,6 +41,7 @@ int main(int argc, char **argv)
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-    printf("Yeah !!!! \n");
+
+    printf("GoodBye !!!! \n");
     return 0;
-}
+};

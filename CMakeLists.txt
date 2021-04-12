@@ -16,13 +16,16 @@ add_executable( ${project_name} #SHARED
 
 
 # GLFW
-add_subdirectory(src/vendor/glfw)
+add_subdirectory(vendor/glfw)
 
-include_directories(src/vendor/glfw/include)
+include_directories(vendor/glfw/include)
 target_link_libraries(${project_name} glfw ${GLFW_LIBRARIES})
 
 # GLAD
-add_subdirectory(src/vendor/glad)
+add_subdirectory(vendor/glad)
 
-include_directories(src/vendor/glad/include)
+include_directories(vendor/glad/include)
 target_link_libraries(${project_name} glad ${GLAD_LIBRARIES})
+
+# glm
+include_directories(vendor/glm/)
